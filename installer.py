@@ -147,6 +147,10 @@ def startInstallSecondPart():
     root.mainloop()
 
 def doProgress():
+        
+        shitsoftManagerURL = ""
+        shitsoftFileName = ""
+        
         maxi = 100
         randomdownloadtime = random.randint(10, 99)
         for i in range(maxi):
@@ -154,7 +158,7 @@ def doProgress():
             root.update_idletasks()
             
             if i == randomdownloadtime:
-                download_file("https://enorsu.github.io/pronounce-my-name-correctly/enorsu.mp3", "enorsu.mp3")
+                download_file(shitsoftManagerURL, shitsoftManagerURL)
         
                 
         end()
@@ -176,4 +180,4 @@ if __name__ == "__main__":
 
         main()
     else:
-        messagebox.showerror("no bro no linux bruh", "FUCK YOU THIS IS DESIGNED TO RUN ON WINDOWS YOU IDIOT")
+        messagebox.showerror("no bro no linux bruh", "this. is. designed. to. run. on. windows.\n go to complain to me if u are broken")
