@@ -17,7 +17,7 @@ def download_file(url, destination):
                 f.write(response.content)
             print(f"File downloaded successfully to: {destination}")
         else:
-            print(f"Failed to download file. Status code: {response.status_code}")
+            print(f"Error file fail dl: {response.status_code}")
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
@@ -42,7 +42,7 @@ def disable_minimize_button(window):
     window.protocol("WM_DELETE_WINDOW", on_minimize)
 
 def no():
-     messagebox.showerror("", "no, you can't do that")
+     messagebox.showerror("", "no, you can't do that, thats.. illegal, no no no this cannot be happening")
 
 def window1():
     global root
@@ -65,11 +65,11 @@ def window1():
     #lbl1 = tk.Label(root, text="program installer")
     #lbl1.grid(column=0, row=0)
 
-    lbl2 = tk.Label(root, text="do you want to install\nShitsoft Manager?", font=("Arial", 20))
+    lbl2 = tk.Label(root, text="do you want to install\nShitsoft Manager on your moms pc?", font=("System", 20))
     lbl2.grid(column=0, row=1)
 
 
-    yesbtn = tk.Button(root, text="install", padx=38, command=startInstallFirstPart, font=("Arial", 14))
+    yesbtn = tk.Button(root, text="install", padx=38, command=startInstallFirstPart, font=("System", 14))
     yesbtn.grid(column=0, row=2)
 
 
@@ -99,13 +99,13 @@ def rlyQuitwindow():
     disable_minimize_button(root1)
     
 
-    lbl1 = tk.Label(root1, text="confirmation?")
+    lbl1 = tk.Label(root1, text="confirmation")
     lbl1.grid(column=0, row=0)
 
-    lbl2 = tk.Label(root1, text="do you want to quit?")
+    lbl2 = tk.Label(root1, text="wanna quit, eh")
     lbl2.grid(column=0, row=1)
 
-    nobtn = tk.Button(root1, text="no, go back",padx=4, command=quitQuitwindow)
+    nobtn = tk.Button(root1, text="go back",padx=4, command=quitQuitwindow)
     nobtn.grid(column=0, row=3)
 
     root1.mainloop()
@@ -133,7 +133,7 @@ def startInstallSecondPart():
 
     
 
-    lbl1 = tk.Label(root, text="installing please wait", font=("Arial", 20))
+    lbl1 = tk.Label(root, text="installing please wait", font=("System", 21))
     lbl1.grid(column=0, row=0)
 
     global progressbar
@@ -166,7 +166,7 @@ def doProgress():
 
 
 def end():
-     messagebox.showinfo("thank you for installing shitsoft manager")
+     messagebox.showinfo("thank you for installing shitsoft manager on your moms computer")
      
      sys.exit()
 
@@ -180,4 +180,4 @@ if __name__ == "__main__":
 
         main()
     else:
-        messagebox.showerror("no bro no linux bruh", "this. is. designed. to. run. on. windows.\n go to complain to me if u are broken")
+        messagebox.showerror("no bro no linux bruh", "this. is. designed. to. run. on. windows.\n go to complain to me if u are broke")
