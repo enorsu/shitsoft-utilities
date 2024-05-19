@@ -18,7 +18,7 @@ def download_file(url, destination):
         else:
             print(f"Failed to download file. Status code: {response.status_code}")
     except Exception as e:
-        print(f"An error occurred: {str(e)}")
+        print(f"Error 404: {str(e)}")
 
 def checkIfOnWindows():
     return os.name == 'nt'
@@ -46,25 +46,25 @@ def window1():
     global root
     root = tk.Tk()
     if isDebugging:
-        root.title("BobInstaller(DEBUG)")
+        root.title("Installer(DEBUG)")
     else:
-        root.title("BobInstaller")
+        root.title("Installer")
     if not isDebugging:
         root.resizable(False, False)
         root.protocol("WM_DELETE_WINDOW", no)
         root.attributes("-topmost", True)
         disable_minimize_button(root)
 
-    lbl2 = tk.Label(root, text="Do you want to install Bob?", font=("Arial", 20))
+    lbl2 = tk.Label(root, text="Do you want to install Unknown?", font=("System", 20))
     lbl2.grid(column=0, row=1)
 
-    yesbtn = tk.Button(root, text="Install Bob", padx=38, command=startInstallFirstPart, font=("Arial", 14))
+    yesbtn = tk.Button(root, text="Install Bob", padx=38, command=startInstallFirstPart, font=("System", 14))
     yesbtn.grid(column=0, row=2)
 
-    nobtn = tk.Button(root, text="No, quit", padx=4, command=rickroll, font=("Arial", 7))
+    nobtn = tk.Button(root, text="No, quit", padx=4, command=rickroll, font=("System", 7))
     nobtn.grid(column=0, row=3)
 
-    lbl3 = tk.Label(root, text="© ShitSoft All rights reserved to enorsu/Panagiotis3149(discord)", font=("Arial", 5))
+    lbl3 = tk.Label(root, text="© ShitSoft All rights reserved to enorsu/Panagiotis3149(discord)", font=("System", 4))
     lbl3.grid(column=0, row=4)
 
     root.mainloop()
@@ -84,13 +84,13 @@ def rlyQuitwindow():
     root1.attributes("-topmost", True)
     disable_minimize_button(root1)
 
-    lbl1 = tk.Label(root1, text="Confirmation?")
+    lbl1 = tk.Label(root1, text="Confirmation")
     lbl1.grid(column=0, row=0)
 
-    lbl2 = tk.Label(root1, text="Do you want to quit?")
+    lbl2 = tk.Label(root1, text="U wanna quit, eh?")
     lbl2.grid(column=0, row=1)
 
-    nobtn = tk.Button(root1, text="No, go back", padx=4, command=quitQuitwindow)
+    nobtn = tk.Button(root1, text="Go Back", padx=4, command=quitQuitwindow)
     nobtn.grid(column=0, row=3)
 
     root1.mainloop()
@@ -112,10 +112,10 @@ def startInstallSecondPart():
     root.resizable(False, False)
     root.attributes("-topmost", True)
 
-    lbl1 = tk.Label(root, text="Installing, please wait", font=("System", 20))
+    lbl1 = tk.Label(root, text="Installing, please be impatient", font=("System", 21))
     lbl1.grid(column=0, row=0)
 
-    progressbar = ttk.Progressbar(root, orient="horizontal", length=400, mode="determinate")
+    progressbar = ttk.Progressbar(root, orient="horizontal", length=420, mode="determinate")
     progressbar.grid(column=0, row=1)
 
     progress_thread = threading.Thread(target=doProgress)
@@ -125,7 +125,7 @@ def startInstallSecondPart():
 
 def doProgress():
     bobManagerURL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ""  # Replace with actual URL
-    bobFileName = "bob.exe"  # Replace with actual file name
+    bobFileName = "bonkitybombersofbobers.png"  # Replace with actual file name
 
     maxi = 100
     randomdownloadtime = random.randint(10, 99)
@@ -139,7 +139,7 @@ def doProgress():
     end()
 
 def end():
-    messagebox.showinfo("Installation Complete", "Thank you for installing Bob.exe")
+    messagebox.showinfo("Installation of unwanted software Complete", "Thank you for installing Malware on your system")
     sys.exit()
 
 def main():
@@ -151,4 +151,4 @@ if __name__ == "__main__":
     if checkIfOnWindows():
         main()
     else:
-        messagebox.showerror("Unsupported OS", "This application is designed to run on Windows.")
+        messagebox.showerror("Nah bro, no linux", "Go complain to Enorsu (discord) if you are broke and cant afford linux")
