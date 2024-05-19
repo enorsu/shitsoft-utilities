@@ -19,7 +19,7 @@ def loginWindow():
     usernameVariable = tk.StringVar()
     passwordVariable = tk.StringVar()
 
-    lbl1 = tk.Label(root, text="Login to Shitsoft", font=("Arial", 18))
+    lbl1 = tk.Label(root, text="Login to Shitsoft", font=("System", 22))
     lbl1.grid()
 
     lbl2 = tk.Label(root, text="username:")
@@ -36,39 +36,24 @@ def loginWindow():
     passentry.grid(column=0, row=4)
 
 
-    submitBtn = tk.Button(root, text="login", font=("Arial", 10), cursor="hand2", command=dontReallyLogin)
+    submitBtn = tk.Button(root, text="login", font=("System", 10), cursor="hand2", command=dontReallyLogin)
     submitBtn.grid(column=0, row=5)
 
 
     root.mainloop()
 
+
 def dontReallyLogin():
-    if usernameVariable.get() == "bob" and passwordVariable.get() == "admin":
+    if usernameVariable.get() == "bob_from_alibaba" and passwordVariable.get() == "Silly_elephant_guy":
         root.destroy()
 
-        showThread = threading.Thread(target=showImages)
-        showThread1 = threading.Thread(target=showImages1)
-        showThread3 = threading.Thread(target=showImages3)
+        threads = [threading.Thread(target=showImages) for _ in range(5)]
 
-        showThread.start()
-        showThread1.start()
-        showThread3.start()
-
+        for thread in threads:
+            thread.start()
 
 def showImages():
-    for i in range(10):
-        bob = Image.open("bob.png")
-        bob.show()
-        bob.close()
-
-def showImages1():
-    for i in range(10):
-        bob = Image.open("bob.png")
-        bob.show()
-        bob.close()
-
-def showImages3():
-    for i in range(10):
+    for i in range(25):
         bob = Image.open("bob.png")
         bob.show()
         bob.close()
